@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For Nicky 💙</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+background:#01050d;
+color:#fff;
+font-family:Arial,sans-serif;
+overflow-x:hidden;
+}
+
+section{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:35px 20px;
+position:relative;
+overflow:hidden;
+}
+
+section:before{
+content:"";
+position:absolute;
+width:350px;
+height:350px;
+background:#087ee8;
+filter:blur(130px);
+opacity:.16;
+border-radius:50%;
+}
+
+.container{
+width:100%;
+max-width:500px;
+text-align:center;
+position:relative;
+z-index:2;
+}
+
+.small{
+color:#8bcfff;
+letter-spacing:4px;
+font-size:11px;
+margin-bottom:22px;
+}
+
+h1{
+font-size:42px;
+line-height:1.15;
+text-shadow:0 0 12px #168cff,0 0 35px #168cff;
+}
+
+h2{
+color:#42aaff;
+font-size:30px;
+margin:15px 0;
+text-shadow:0 0 20px #168cff;
+}
+
+p{
+color:#d9efff;
+line-height:1.8;
+margin:18px 0;
+}
+
+.btn{
+border:2px solid #2196ff;
+background:rgba(0,100,200,.18);
+color:white;
+padding:15px 28px;
+border-radius:50px;
+font-weight:bold;
+letter-spacing:1px;
+box-shadow:0 0 15px #168cff;
+margin-top:15px;
+}
+
+.btn:active{transform:scale(.94)}
+
+.gift{
+font-size:105px;
+animation:float 2s infinite ease-in-out;
+filter:drop-shadow(0 0 20px #168cff);
+}
+
+.cake{
+font-size:100px;
+animation:pulse 1.5s infinite;
+}
+
+.envelope{
+font-size:100px;
+transition:.5s;
+}
+
+.card{
+background:rgba(5,30,55,.55);
+border:1px solid #168cff;
+border-radius:25px;
+padding:28px 20px;
+box-shadow:0 0 30px rgba(22,140,255,.25);
+backdrop-filter:blur(10px);
+}
+
+.hidden{display:none}
+
+.memory{
+margin:18px 0;
+padding:22px;
+border:1px solid #126bc0;
+border-radius:20px;
+background:rgba(0,80,160,.12);
+}
+
+.memory span{
+font-size:45px;
+}
+
+footer{
+margin-top:35px;
+font-size:11px;
+color:#8bcfff;
+line-height:2;
+}
+
+.star{
+position:fixed;
+width:3px;
+height:3px;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite;
+}
+
+@keyframes float{
+50%{transform:translateY(-18px) rotate(3deg)}
+}
+
+@keyframes pulse{
+50%{transform:scale(1.08)}
+}
+
+@keyframes twinkle{
+50%{opacity:.2;transform:scale(.5)}
+}
+
+@media(max-width:380px){
+h1{font-size:34px}
+h2{font-size:25px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<!-- WELCOME -->
+<section>
+<div class="container">
+
+<div class="small">A LITTLE SURPRISE FOR YOU</div>
+
+<div class="gift">🎁</div>
+
+<h1>Hey Nicky 💙</h1>
+
+<h2>Something Special Is Waiting...</h2>
+
+<p>
+A tiny digital surprise made especially for you.
+Ready to open it?
+</p>
+
+<button class="btn" onclick="go('gift')">
+OPEN THE SURPRISE ✨
+</button>
+
+</div>
+</section>
+
+
+<!-- GIFT -->
+<section id="gift">
+<div class="container">
+
+<div class="small">THE SURPRISE</div>
+
+<div id="giftClosed">
+
+<div class="gift">🎁</div>
+
+<h1>Your Gift Is Here</h1>
+
+<p>
+Tap below and see what's inside.
+</p>
+
+<button class="btn" onclick="openGift()">
+OPEN GIFT 🎁
+</button>
+
+</div>
+
+<div id="giftOpen" class="hidden">
+
+<div class="cake">🎂</div>
+
+<h1>HAPPIEST BIRTHDAY</h1>
+
+<h2>NICKY 💙</h2>
+
+<p>
+Today is your special day.
+So here's a little corner of the internet
+made just for you. ✨
+</p>
+
+<button class="btn" onclick="go('wish')">
+NEXT ✨
+</button>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- WISH -->
+<section id="wish">
+<div class="container">
+
+<div class="small">MAKE A WISH</div>
+
+<div class="card">
+
+<div class="cake">🕯️🎂🕯️</div>
+
+<h1>Make A Wish ✨</h1>
+
+<p>
+Close your eyes for a second,
+make your secret wish,
+then tap the button.
+</p>
+
+<button class="btn" onclick="makeWish()">
+I MADE MY WISH 🌟
+</button>
+
+<div id="wishDone" class="hidden">
+
+<h2>✨ Wish Locked ✨</h2>
+
+<p>
+May this little wish find its way
+to something beautiful. 💙
+</p>
+
+</div>
+
+</div>
+
+<button class="btn" onclick="go('letter')">
+OPEN SECRET LETTER 💌
+</button>
+
+</div>
+</section>
+
+
+<!-- LETTER -->
+<section id="letter">
+<div class="container">
+
+<div class="small">A SECRET MESSAGE</div>
+
+<div id="letterClosed">
+
+<div class="envelope">💌</div>
+
+<h1>There's A Letter For You</h1>
+
+<button class="btn" onclick="openLetter()">
+OPEN LETTER 💙
+</button>
+
+</div>
+
+<div id="letterOpen" class="hidden">
+
+<div class="card">
+
+<h2>Dear Nicky 💙</h2>
+
+<p>
+On your special day, I just wanted to leave
+you a little message here.
+</p>
+
+<p>
+I hope you keep finding reasons to smile,
+keep chasing beautiful moments,
+and keep being wonderfully you. ✨
+</p>
+
+<p>
+May your coming days bring you happiness,
+peace, laughter and lots of unforgettable memories.
+</p>
+
+<h2>Happy Birthday 🎂💙</h2>
+
+</div>
+
+<button class="btn" onclick="go('memories')">
+OUR MEMORIES 📸
+</button>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- MEMORIES -->
+<section id="memories">
+<div class="container">
+
+<div class="small">LITTLE MOMENTS</div>
+
+<h1>Our Memories 📸</h1>
+
+<p>
+Some moments become memories simply
+because they made us smile.
+</p>
+
+<div class="memory">
+<span>💙</span>
+<h2>First Smile</h2>
+<p>
+That one little moment that became special.
+</p>
+</div>
+
+<div class="memory">
+<span>✨</span>
+<h2>Random Moments</h2>
+<p>
+The silly conversations and unexpected smiles.
+</p>
+</div>
+
+<div class="memory">
+<span>🌻</span>
+<h2>Beautiful Days</h2>
+<p>
+More memories waiting to be created.
+</p>
+</div>
+
+<button class="btn" onclick="go('final')">
+ONE LAST SURPRISE 🎁
+</button>
+
+</div>
+</section>
+
+
+<!-- FINAL -->
+<section id="final">
+<div class="container">
+
+<div class="small">FINAL MESSAGE</div>
+
+<div class="card">
+
+<div style="font-size:75px">🎉</div>
+
+<h1>NICKY 💙</h1>
+
+<h2>Happy Birthday!</h2>
+
+<p>
+This website may be made from code,
+but the wish behind it is real.
+</p>
+
+<p>
+Keep smiling. Keep shining.
+And make this year unforgettable. ✨
+</p>
+
+<div style="font-size:45px;margin:20px">
+🎂 💙 ✨ 🎁
+</div>
+
+</div>
+
+<footer>
+Developer: Sun<br>
+Instagram: cybersticksun
+</footer>
+
+<button class="btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+REPLAY 🔄
+</button>
+
+</div>
+</section>
+
+
+<script>
+
+function go(id){
+document.getElementById(id).scrollIntoView({
+behavior:"smooth"
+});
+}
+
+function openGift(){
+document.getElementById("giftClosed").style.display="none";
+document.getElementById("giftOpen").style.display="block";
+}
+
+function makeWish(){
+document.getElementById("wishDone").style.display="block";
+}
+
+function openLetter(){
+document.getElementById("letterClosed").style.display="none";
+document.getElementById("letterOpen").style.display="block";
+}
+
+for(let i=0;i<70;i++){
+
+let s=document.createElement("div");
+
+s.className="star";
+
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+s.style.animationDelay=Math.random()*2+"s";
+
+document.getElementById("stars").appendChild(s);
+
+}
+
+</script>
+
+</body>
+</html>
